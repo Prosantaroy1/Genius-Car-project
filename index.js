@@ -1,8 +1,14 @@
+ //button add function set
+ document.getElementById('btn-add').addEventListener('click',function(){
+   //console.log('click me')
+   window.location.href ='bolg.html'
+
+})
 //function decleation for all card
 function getInputFieldValueById(InputFieldId){
     const InputField = document.getElementById(InputFieldId);
     const InputFieldValue = InputField.value;
-    const NewInputValue = parseInt(InputFieldValue);
+    const NewInputValue = parseFloat(InputFieldValue);
     InputField.value ='';
     return NewInputValue;
 }
@@ -18,6 +24,11 @@ document.getElementById('btn-first').addEventListener('click',function(){
     const firstInputTwo = getInputFieldValueById('first-input-two');
     const total = 0.5 * parseFloat(firstInput) * parseFloat(firstInputTwo);
     resultData(firstName, total);
+    console.log(firstInput,firstInputTwo);
+    if(isNaN( firstInput,firstInputTwo)){
+      alert('vaid number add');
+      return;
+    }
     
 })
 //card-second(2) start
@@ -78,7 +89,7 @@ document.getElementById('btn-second').addEventListener('click',function(){
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${serial} ${firstName}</td>
-      <td>${total}cm<sup>2</sup></td>
+      <td>${total.toFixed(2)}cm<sup>2</sup></td>
       <td>
       <button class="bg-blue-500 btn lowercase px-2 " >
       convert to m<sup>2</sup>
@@ -88,9 +99,3 @@ document.getElementById('btn-second').addEventListener('click',function(){
     tableContainer.appendChild(tr);
  };
 
- //button add function set
- document.getElementById('btn-add').addEventListener('click',function(){
-    //console.log('click me')
-    window.location.href ='bolg.html'
-
- })
