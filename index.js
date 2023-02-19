@@ -58,17 +58,17 @@ document.getElementById('btn-second').addEventListener('click',function(){
     const fiveName = document.getElementById('five-name').innerText;
     const fiveInput = getInputFieldValueById('five-input');
     const fiveInputTwo = getInputFieldValueById('five-input-two');
-    const total = parseFloat(fiveInput) * parseFloat(fiveInputTwo);
+    const total = 0.5 * parseFloat(fiveInput) * parseFloat(fiveInputTwo);
     resultData(fiveName, total);
  }) 
-  //card-five(5) start
+  //card-five(6) start
   document.getElementById('btn-six').addEventListener('click',function(){
     serial +=1;
     //get the data-3 form html using id
     const sixName = document.getElementById('six-name').innerText;
     const sixInput = getInputFieldValueById('six-input');
     const sixInputTwo = getInputFieldValueById('six-input-two');
-    const total = parseFloat(sixInput) * parseFloat(sixInputTwo);
+    const total = 3.14 * parseFloat(sixInput) * parseFloat(sixInputTwo);
     resultData(sixName, total);
  }) 
 //result function declearation
@@ -79,9 +79,18 @@ document.getElementById('btn-second').addEventListener('click',function(){
     tr.innerHTML = `
       <td>${serial} ${firstName}</td>
       <td>${total}cm<sup>2</sup></td>
-      <button class="bg-blue-500 btn border-0 mr-16 px-12 text-xs">
+      <td>
+      <button class="bg-blue-500 btn lowercase px-2 " >
       convert to m<sup>2</sup>
       </button>
+      </td>
     `;
     tableContainer.appendChild(tr);
  };
+
+ //button add function set
+ document.getElementById('btn-add').addEventListener('click',function(){
+    //console.log('click me')
+    window.location.href ='bolg.html'
+
+ })
